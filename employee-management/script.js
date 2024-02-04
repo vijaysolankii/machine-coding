@@ -8,7 +8,7 @@
 
   const employeesList = document.querySelector(".employees__name--list");
   const employeeInfo = document.querySelector(".employees__single--list");
-
+  ``;
   const createEmployee = document.querySelector(".createEmployee");
   const addEmployee = document.querySelector(".addEmployee");
   const employeeForm = document.querySelector(".addEmployee_form");
@@ -48,9 +48,9 @@
   });
 
   const dobInput = document.querySelector(".addEmployee_form--dob");
-  dobInput.max = `${new Date().getFullYear() - 18} - ${new Date()
-    .toISOString()
-    .slice(5, 10)}`;
+  //   dobInput.max = `${new Date().getFullYear() - 18} - ${new Date()
+  //     .toISOString()
+  //     .slice(5, 10)}`;
 
   employeeForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -64,8 +64,8 @@
     });
 
     empData.id = employees[employees.length - 1].id + 1;
-    empData.age =
-      new Date().getFullYear() - parseInt(empData.dob.slice(0, 4), 10);
+    // empData.age =
+    //   new Date().getFullYear() - parseInt(empData.dob.slice(0, 4), 10);
 
     empData.imageUrl =
       empData.imageUrl || "https://cdn-icons-png.flaticon.com/512/0/93.png";
@@ -109,10 +109,43 @@
         <span>${selectedEmployee.address}</span>
         <span>${selectedEmployee.email}</span>
         <span>Mobile - ${selectedEmployee.contactNumber}</span>
-        <span>DOB - ${selectedEmployee.dob}</span>
+        <span><button style="margin-top:10px" class="editEmployee"> Edit </button></span>
     </div>    
     
   `;
+
+    const editEmployee = document.querySelector(".editEmployee");
+
+    editEmployee.addEventListener("click", function () {
+      console.log(selectedEmployee);
+      addEmployee.style.display = "flex";
+
+      const { elements } = document.querySelector("form");
+
+      for (const [key, value] of Object.entries(selectedEmployee)) {
+        const field = elements.namedItem(key);
+        field && (field.value = value);
+      }
+
+      //   TODO : how to update items on submit handler click
+      employeeForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(employeeForm);
+        const values = [...formData.entries()];
+        console.log(values);
+        let updatedEmployee = {};
+
+        values.forEach((val) => {
+          updatedEmployee[val[0]] = val[1];
+        });
+
+        Object.assign(selectedEmployee, updatedEmployee);
+
+        renderEmployeeList();
+        renderSingleEmployee();
+        addEmployee.style.display = "none";
+      });
+    });
   };
 
   renderEmployeeList();
