@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <header>
+            <h1>Employee Management System</h1>
+            <button class="createEmployee">Add Employee</button>
+        </header>
+
+        <div class="employees">
+            <div class="employees__name">
+                <div class="employees__name--title">Employee List</div>
+                <div class="employees__name--list"></div>
+            </div>
+            <div class="employees__single">
+                <div class="employees__single--title">Employee Info</div>
+                <div class="employees__single--list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="addEmployee">
+        <form class="addEmployee_form" >
+            <span style="width: 100%;margin-bottom: 10px;font-family: math; text-align:center;"><h3>Add Employee Details</h3></span>
+            <div>
+                <input type="text" placeholder="firstName" name="firstName" id="firstName" required />
+                <input type="text" placeholder="lastName" name="lastName" id="lastName" required />
+            </div>
+            <input type="text" placeholder="ImageUrl (Optional)"  name="imageUrl" id="imageUrl" >
+            <input type="email" placeholder="Email"  name="email" id="email" required>
+            <input type="text" placeholder="Contact Number"  name="contactNumber" id="contactNumber" required>
+            <input type="number" placeholder="Age"  name="age" id="age" required>
+            <input type="date" placeholder="Date Of Birth" name="dob" id="addEmployee_form--dob" class="addEmployee_form--dob" required>
+            <input type="number" placeholder="Salary" name="salary" id="addEmployee_form--salary" required>
+            <textarea name="address" placeholder="Address" id="address" required></textarea>
+            <input type="submit" value="Submit" id="submit-btn" required>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

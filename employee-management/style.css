@@ -1,0 +1,29 @@
+*{margin: 0;padding: 0;}
+
+body{font-size: 16px;background-color: #d0d0d0;padding: 20px;}
+
+header{display: flex;justify-content: space-between;}
+:is(.submit-btn,button){transition: 0.3s ease all;background-color: #ddd;color: #010101;padding: 5px 20px ;appearance: none;}
+:is(.submit-btn,button):hover{background-color: #eee;color: #1e1e1e;}
+
+.employees{display: flex;margin-top: 20px;}
+.employees .employees__name,.employees .employees__single {border: 1px solid #090909; }
+.employees .employees__name .employees__name--title,.employees .employees__single .employees__single--title {background-color: #00000071;color: #090909;padding: 20px 30px;font-weight: bold;}
+.employees .employees__name{width: 30%;border-right: 0;}
+.employees .employees__single{width: 70%;}
+.employees .employees__name,.employees .employees__single{height:400px;}
+.employees .employees__name{display: flex;flex-direction: column;}
+.employees .employees__name--list{overflow-y: auto;overflow-x: hidden;}
+.employees .employees__name--item{display: inline-flex;width: calc(100% - 60px);font-size: 20px;line-height: 1.5;text-align: center;justify-content: center;padding: 10px 30px;cursor: pointer;justify-content: space-between;transition: 0.2s ease all;}
+.employees .employees__name--item.selected, .employees .employees__name--item:hover{background-color:#00000071;color:#090909;}
+.employees__single--list img{width:200px;height:200px;margin:0 auto;display:block;border-radius:50%;background:#ddd;}
+.employees__single--list{padding:30px 40px;display: flex;align-items: center;justify-content: center;height: calc(100% - 120px);}
+.employees__single--list span{display:inline-block;width:100%;text-align: left;margin-left: 40px;margin-bottom: 10px;}
+.addEmployee{position:absolute;top:0;left:0;width:100%;height:100%;background:rgb(0 0 0 / 50%);display:none;align-items:center;justify-content:center;}
+.addEmployee .addEmployee_form{background:#fff;max-width:500px;padding:20px;border-radius:20px;display:flex;flex-wrap:wrap;gap:10px 0;}
+.addEmployee .addEmployee_form :is(input,textarea){appearance:none;border:1px solid #ddd;padding:10px 10px;font-size:16px;outline:none;font-family:math;transition: 0.3s ease all;}
+.addEmployee .addEmployee_form :is(input,textarea):is(:focus,:active,:hover){border: 1px solid #000;}
+.addEmployee .addEmployee_form input{width:100%;}
+.addEmployee .addEmployee_form div input{width:calc(100% - 19px);}
+.addEmployee .addEmployee_form div{display:grid;grid-template-columns:repeat(2,1fr);grid-column-gap:10px;}
+.addEmployee .addEmployee_form textarea{width:100%;resize:none;}
