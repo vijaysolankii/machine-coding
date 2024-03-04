@@ -7,8 +7,18 @@
 .App .stepWrap .step{display:flex;align-items:center;flex-direction:column;}
 .formWrapper .btn{appearance: none; -webkit-appearance: none; border: none; font-size: 16px; font-weight: bold; margin-top: 20px; text-transform: uppercase; padding: 10px 40px 10px; line-height: 1; border-radius: 8px; background: orange; color: #f9f9f9; cursor: pointer;}
 .componentWrap{padding:20px;}
-.componentWrap div{background:#ddd;padding:20px;border-radius:10px;margin-top:20px;font-weight:bold;font-size:22px;}
+.componentWrap .formWrapper{background:#ddd;padding:20px;border-radius:10px;margin-top:20px;font-weight:bold;font-size:22px;}
 .stepWrap .step.active .step-number{color: #fff; background-color: rgb(40, 40, 136);}
 .stepWrap .step.complete .step-number{color: #fff; background-color: rgb(48, 155, 15);}
 .stepWrap .progress-bar{position: absolute;top: 25%;left: 0;width: 100%;height: 4px;background-color: #ddd;}
 .stepWrap .progress-bar .progress{height: 100%; background-color: rgb(48, 155, 15);transition: 0.3s ease all;}
+
+.form-row{display:flex;width:100%;margin-bottom:20px;}
+
+.form-group{width:100%;padding: 0 15px; text-align: left;}
+.form-row .form-group label{font-size:18px;margin-bottom:8px;font-weight: 500;display: inline-block;}
+.form-row .form-group input{padding: 10px 20px;width:calc(100% - 46px);appearance:none;border:none;outline:none;}
+.form-group .cbParentWrap{display:flex;margin-top:20px;gap: 0 20px;}
+.form-group .cbParentWrap .checkboxWrap{display:flex;}
+.form-group .cbParentWrap .checkboxWrap input{appearance:revert;}
+.form-group .cbParentWrap .checkboxWrap label{margin-bottom:0;margin-left:10px;}
